@@ -8,18 +8,6 @@ body {
   margin: 0;
 }
 
-.header-container {
-  display: flex;
-  align-items: center; /* จัดแนวแนวตั้งให้โลโก้และข้อความอยู่ตรงกลาง */
-  justify-content: center; /* จัดแนวนอนให้โลโก้และข้อความอยู่ตรงกลาง */
-}
-
-.logo {
-  height: 60px; /* ปรับความสูงให้สูงขึ้น */
-  width: auto; /* ปรับให้ความกว้างเป็นอัตโนมัติตามสัดส่วน */
-  margin-right: 10px; /* ระยะห่างระหว่างโลโก้และข้อความ */
-}
-
 h1 {
   text-align: center;
 }
@@ -46,7 +34,7 @@ h1 {
 }
 
 button {
-  background-color: #008163; /* สีเขียว */
+  background-color: #03a680; /* สีเขียว */
   color: #E9EFEC;
   padding: 10px 20px;
   border: none;
@@ -58,6 +46,6 @@ button {
 }
 
 button:hover {
-  background-color: #EE2526; /* สีเมื่อ hover */
+  background-color: #f25050; /* สีเมื่อ hover */
 }
 

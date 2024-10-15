@@ -67,13 +67,13 @@ function App() {
   useEffect(() => {
     const fetchStores = async () => {
       try {
-        const response = await axios.get(`${base_url}/api/stores`);
+        const response = await axios.get(apiURL + "/api/stores");
         console.log(response.data);
         if (response.status === 200) {
           setStores(response.data);
         }
       } catch (error) {
-        console.error("Error fetching stores:", error);
+        console.log(error);
       }
     };
     fetchStores();
@@ -92,9 +92,9 @@ function App() {
     if (!myLocation.lat || !myLocation.lng) {
       Swal.fire({
         title: "Error!",
-        text: "Please enter your valid location",
+        text: "Please Enter your valid Store location",
         icon: "error",
-        confirmButtonText: "OK",
+        confirmButtonText: "OK!!",
       });
       return;
     }
@@ -102,9 +102,9 @@ function App() {
     if (!selectedStore) {
       Swal.fire({
         title: "Error!",
-        text: "Please select a store",
+        text: "Please Enter your valid Store location",
         icon: "error",
-        confirmButtonText: "OK",
+        confirmButtonText: "OK!!",
       });
       return;
     }
@@ -119,16 +119,16 @@ function App() {
     if (distance <= deliveryZone.radius) {
       Swal.fire({
         title: "Success",
-        text: "You are within the delivery zone for " + selectedStore.name,
+        text: "You are with in the delivery zone",
         icon: "success",
-        confirmButtonText: "OK",
+        confirmButtonText: "OK!!",
       });
     } else {
       Swal.fire({
         title: "Error!",
-        text: "You are outside the delivery zone for " + selectedStore.name,
+        text: "You are outside the delivery zone",
         icon: "error",
-        confirmButtonText: "OK",
+        confirmButtonText: "OK!!",
       });
     }
   };
@@ -136,11 +136,6 @@ function App() {
   return (
     <>
       <div className="header-container">
-        <img
-          src="https://cdn-icons-png.flaticon.com/256/12398/12398470.png"
-          alt="Logo"
-          className="logo"
-        />
         <h1>
           <span className="color1">STORE DELIVERY</span>
           <span className="color-red"> ZONE CHECKER</span>
